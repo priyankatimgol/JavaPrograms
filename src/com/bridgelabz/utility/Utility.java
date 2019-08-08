@@ -70,5 +70,22 @@ public class Utility {
     	}
     
 	}
+	/**
+	 * @param firstnumber first number added
+	 * @param secondnumber second number added
+	 * @param thirdnumber third number added
+	 * @param fourthnumber fourth number added
+	 * @param fivenumber five number added
+	 */
+	public static void stats5(double firstnumber,double secondnumber,double thirdnumber,double fourthnumber,double fivenumber) {
+		double average=(firstnumber+secondnumber+thirdnumber+fourthnumber+fivenumber)/5;
+		double maximum=Math.max(firstnumber,Math.max(secondnumber, Math.max(thirdnumber, Math.max(fourthnumber, fivenumber))));
+		double minimum=Math.min(firstnumber,Math.min(secondnumber, Math.min(thirdnumber, Math.min(fourthnumber, fivenumber))));
+		System.out.format("Average of given 5 number: %.2f",average);
+		System.out.println("\nMaximum value in given 5 number: "+maximum);
+		System.out.println("Minimum value in given 5 number: "+minimum);
+	}
+    
+
     
 }
