@@ -104,8 +104,8 @@ public class Utility {
 	 	* @param month enter month
 		 * @return true if month is between 3 and 6 ,20<=day<=31
 		 */
-	public static boolean season(int day, int month)
-	{
+		public static boolean season(int day, int month)
+		{
 		if(month>=3&&month<=6&&day>=20&&day<=31)
 		{
       			if(month==3)
@@ -127,53 +127,96 @@ public class Utility {
   		}
 		else
 			return false;
-	}
+		}
 	
-	/**
-	 * @param firstnumber first number entered
-	 * @param secondnumber second number entered
-	 * @param thirdnumber third number entered
-	 */
-	public static void quadNumber(double firstnumber,double secondnumber,double thirdnumber)
-	{
+		/**
+		 * @param firstnumber first number entered
+		 * @param secondnumber second number entered
+		 * @param thirdnumber third number entered
+		 */
+		public static void quadNumber(double firstnumber,double secondnumber,double thirdnumber)
+		{
 		double delta,Root1,Root2;
 		delta=secondnumber*secondnumber-4*firstnumber*thirdnumber;
-	if(delta>=0)
+		if(delta>=0)
 		{
 			Root1 = (-secondnumber + Math.sqrt(delta))/(2*firstnumber);
 			Root2 =(-secondnumber - Math.sqrt(delta))/(2*firstnumber);
 			System.out.println(" "+Root1+" "+Root2);
 
 		}
-	else if(delta == 0)
+		else if(delta == 0)
 		{
 			Root1 = Root2 = -secondnumber / (2 * firstnumber);
 			System.out.format("root1 = root2 = "+ Root1);
 		}
     
-    else 
-    	{
+   		 else 
+    		{
     		 Root1 = -secondnumber / (2 *firstnumber);
     		 Root2 = (Math.sqrt(-delta) / (2 * firstnumber));
     		System.out.format("root1 = "+Root1+ "and"+ "root2 ="+Root2);
-    	}
+    		}
     
-	}
-	/**
-	 * @param firstnumber first number added
-	 * @param secondnumber second number added
-	 * @param thirdnumber third number added
-	 * @param fourthnumber fourth number added
-	 * @param fivenumber five number added
-	 */
-	public static void stats5(double firstnumber,double secondnumber,double thirdnumber,double fourthnumber,double fivenumber) {
+		}
+		/**
+		 * @param firstnumber first number added
+	 	* @param secondnumber second number added
+		 * @param thirdnumber third number added
+	 	* @param fourthnumber fourth number added
+		 * @param fivenumber five number added
+		 */
+		public static void stats5(double firstnumber,double secondnumber,double thirdnumber,double fourthnumber,double fivenumber) {
 		double average=(firstnumber+secondnumber+thirdnumber+fourthnumber+fivenumber)/5;
 		double maximum=Math.max(firstnumber,Math.max(secondnumber, Math.max(thirdnumber, Math.max(fourthnumber, fivenumber))));
 		double minimum=Math.min(firstnumber,Math.min(secondnumber, Math.min(thirdnumber, Math.min(fourthnumber, fivenumber))));
 		System.out.format("Average of given 5 number: %.2f",average);
 		System.out.println("\nMaximum value in given 5 number: "+maximum);
 		System.out.println("Minimum value in given 5 number: "+minimum);
-	}
+	 	}
+	
+			/**
+			 * @param temperature Enter temperature is larger than 50 
+			 * @param speed Enter speed  is larger than 120 or less than 3
+			 * @return wind value
+			 */
+			public static double windchill(double temperature,double speed) {
+				
+				double wind=35.74+0.6215*temperature+(0.4275*temperature-35.75)*Math.pow(0,16);
+				return wind;
+			} 
+			
+			/**
+			 * @param day day added
+			 * @param month month added
+			 * @param year year added
+			 * @return day
+			 * 
+			 */
+			public static int dayofweek(int day,int month,int year) {
+				
+				int year1=year-(14-month)/12;
+				int year2= year1 + year1/4 - year1/100 + year1/400;
+				int month1 = month + 12 *((14 - month ) / 12)- 2;
+				int day1= (day + year2 + 31 *month1/12)% 7;
+				return day1;
+				
+			}
+			/**
+			 * @param principle principle added
+			 * @param year year added
+			 * @param Rate Rate added
+			 * @return monthly compound interest
+			 */
+			public static double  carloan(double principle,double year,double Rate) {
+				
+				double number=12*year;
+				double rate=Rate/(12*100);
+			    double payment=(principle*rate)/(1-(Math.pow((1+rate),-number)));
+				return payment;
+				
+			}
+			
     
 
     
