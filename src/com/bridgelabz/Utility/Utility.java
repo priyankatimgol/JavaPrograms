@@ -217,6 +217,21 @@ public class Utility {
 				
 			}
 			
+	
+	
+			/**
+			 * @param angle Entered angle in radians
+			 */
+			public static void trig(double angle) {
+				
+				double sin=Math.sin(angle);
+				System.out.println("angle in sin: "+sin);
+				double cos=Math.cos(angle);
+				System.out.println("angle in cos: "+cos);
+				double tan=Math.tan(sin/cos);
+				System.out.println("angle in tan: "+tan);
+				}
+			
     
 
     
