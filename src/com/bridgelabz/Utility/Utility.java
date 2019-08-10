@@ -218,7 +218,6 @@ public class Utility {
 			}
 			
 	
-	
 			/**
 			 * @param angle Entered angle in radians
 			 */
@@ -228,8 +227,14 @@ public class Utility {
 				System.out.println("angle in sin: "+sin);
 				double cos=Math.cos(angle);
 				System.out.println("angle in cos: "+cos);
-				double tan=Math.tan(sin/cos);
+				double tan=Math.tan(angle);
 				System.out.println("angle in tan: "+tan);
+				double cot=1/tan;
+				System.out.println("angle in cot: "+cot);
+				double cosec=1/sin;
+				System.out.println("angle in cosec: "+cosec);
+				double sec=1/cos;
+				System.out.println("angle in sec: "+sec);
 				}
 			
     
