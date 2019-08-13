@@ -1,27 +1,22 @@
 /******************************************************************************
  
- *  Purpose: Determine flip coin and print out "Heads" or"Tails" accordingly and print the percentage of Head vs Tail.
+ *  Purpose: Determine nth harmonic number.
  *
  *  @author  PriyankaTimgol
  *  @version 1.0
  *  @since   13-08-2017
  *
  ******************************************************************************/
-
 package com.bridgelabz.javaconditionprograms;
-
-import java.util.Scanner;
 
 import com.bridgelabz.Utility.Utility;
 
-public class FlipCoin {
+public class HarmonicNumber {
 
 	public static void main(String[] args) {
-		
-		System.out.println("Enter the number of flip coin:");
-		Scanner scanner=new Scanner(System.in);
-		int number=scanner.nextInt();
-		Utility.flipcoin(number);
-		scanner.close();
+		int number=Integer.parseInt(args[0]);
+		System.out.println("number is: "+number);
+		Utility.harmonicnumber(number);
 	}
+
 }

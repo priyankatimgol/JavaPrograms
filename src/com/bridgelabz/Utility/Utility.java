@@ -1,4 +1,5 @@
 package com.bridgelabz.Utility;
+import java.util.Random;
 import java.util.Scanner;
 public class Utility {
 	
@@ -140,14 +141,153 @@ public class Utility {
 				System.out.println("angle in sin: "+sin);
 				double cos=Math.cos(angle);
 				System.out.println("angle in cos: "+cos);
-				double tan=Math.tan(sin/cos);
+				double tan=Math.tan(angle);
 				System.out.println("angle in tan: "+tan);
+				double cot=1/tan;
+				System.out.println("angle in cot: "+cot);
+				double cosec=1/sin;
+				System.out.println("angle in cosec: "+cosec);
+				double sec=1/cos;
+				System.out.println("angle in sec: "+sec);
 				}
 			
 			/*************** Condition, Loops and Logical Programs *****************/
 			
+			/**
+			 * @param number  added number of flip coin.
+			 */
+			public static void flipcoin(int number) {
+				
+				int head=0,tail=0;
+				Random random=new Random();
+				
+;				for(int i=1;i<=number;i++)
+				{
+					int coin=(int)random.nextInt(1+1)+0;
+					if(coin==1) {
+						
+						System.out.println("head");
+						head++;
+					}
+					else 
+					{
+						System.out.println("tail");
+						tail++;
+					}
+				
+				}
+				System.out.println("Head: "+head+"\tTail: "+tail+"\nPercentage of head vs tail:"+(head/tail*100));	
+			}
+
+				/**
+				 * @param number added number is power of 2
+				 */
+				public static void powerof2(int number) {
+					
+					int i;
+					for(i=1;i<=number;i++)
+					{
+					System.out.println("power of 2: "+((int)Math.pow(2,i)));
+					}
+				}
+				/**
+				 * @param number added number
+				 */
+				public static void harmonicnumber(int number) {
+					
+					double sum=0;
+					for(int i=1;i<=number;i++)
+					{
+						sum=sum+1.0/i;
+					}
+					System.out.println(sum);
+				}
+				
+				/**
+				 * @param number added number
+				 * @return square root
+				 */
+				public static double sqrt(double number) {
+					
+					double temp=number;
+					double epsilon = 1e-15;
+					while(Math.abs(temp-number/temp) > epsilon*temp)
+					{
+						 temp =(number/temp+temp)/2.0;
+					}
+					return temp;
+					
+					
+				}
+				/**
+				 * @param lower added lower value
+				 * @param upper added upper value
+				 */
+				public static void primenumber(int lower, int upper) {
+					
+					int flag=1;
+					for(int i=lower;i<=upper;i++) {
+						for(int j=2;j<i;j++) {
+							if(i%j==0) {
+								flag=0;
+							    break;
+							}
+							else
+							{
+								flag=1;
+							}
+						}
+						if(flag==1)
+						{
+							System.out.println(i);
+						}
+					}
+					}
+				/**
+				 * @param number  added decimal number
+				 */
+				public static void decimaltobinary(int number)
+				{
+					int binary[]=new int[32];
+					int i=0;
+					while(number>0)
+					{
+						 binary[i]=number%2;
+						number=number/2;
+						 i++;
+					}
+					for(int j=i-1;j>=0;j--)
+						System.out.print(binary[j]);
+				}
+				
+				/**
+				 * @param angle enter the angle
+				 */
+				public static void sin(double angle) {
+					
+				double term = 1.0;    
+			    double sum  = 0.0;    
+			    angle =  (angle % (2 * Math.PI));
+
+		        for (int i = 1; term != 0.0; i++) {
+		            term=term*(angle / i);
+		            if (i % 4 == 1)
+		            {
+		            	sum=sum+term;
+		            }
+		            if (i % 4 == 3) 
+		            {
+		            	sum=sum-term;
+		            }
+		        }
+		        System.out.println(sum);
+				}
+				
+}
 			
-}			
+			
+			
+	
 			
 			
 

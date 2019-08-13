@@ -14,7 +14,8 @@ import com.bridgelabz.Utility.Utility;
 
 public class CarLoan {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		double principle=Integer.parseInt(args[0]);  
 		double year=Integer.parseInt(args[1]);
 		double Rate=Integer.parseInt(args[2]);
