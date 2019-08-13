@@ -238,7 +238,76 @@ public class Utility {
 				}
 			
     
+			/**
+	 * @param tempreture added temperature.
+	 * @param choice enter your choice 1 or 2
+	 * @return if you enter 1 then then print result in fahrenhieit or 2 then celsius
+	 */
+	public static double temperatureConversion(double tempreture,int choice)
+	{ 
+		if(choice==1) {
+			double resultfahrenhieit = (tempreture*9/5)+32;
+			return resultfahrenhieit;
+		}
+		else {
+			double resultcelsius = (tempreture-32)*5/9;
+			return resultcelsius;
+		}
 
+	}
+	
+	
+	
+		
+/**
+ * @param number Entered number in decimal
+ */
+public static void binary(int number) {
+	
+	int arr[]=new int[32];
+	String string="";
+	int i=0;
+	while(number>0)
+	 {
+		arr[i]=number % 2;
+		number=number/2;
+		i++;	
+	}
+	for(int j=i-1;j>=0;j--) {
+		string=string+""+arr[j];
+	}
+	System.out.println(string);
+	int Stringtointeger=Integer.parseInt(string);
+	String string1=String.format("%08d",Stringtointeger);
+	System.out.println(string1);
+	String[] split=new String[2];
+	int length=string1.length();
+	split[0]=string1.substring(0, length/2);
+	split[1]=string1.substring(length/2, length);
+	System.out.println(split[0]);
+	System.out.println(split[1]);
+	
+	String temp=split[0];
+	split[0]=split[1];
+	split[1]=temp;
+	
+	String newstring=split[0].concat(split[1]);
+	int decimal=Integer.parseInt(newstring);
+	System.out.println("binary number:"+decimal);
+	
+	
+	int rem=0,sum=0,count=0;
+	while(decimal>0)
+	{
+		rem=decimal%10;
+		decimal=decimal/10;
+		sum=sum+(rem*(int)Math.pow(2,count));
+		count++;
+		
+	}
+	System.out.println("\nBinary To Decimal:"+sum);
+
+}
     
 }
 
