@@ -1,6 +1,6 @@
 /******************************************************************************
  
- *  Purpose: convert the number into Decimal to binary.
+ *  Purpose: convert the number into Decimal to binary3.
  *
  *  @author  PriyankaTimgol
  *  @version 1.0

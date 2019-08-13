@@ -176,7 +176,7 @@ public class Utility {
 					}
 				
 				}
-				System.out.println("Head: "+head+"\tTail: "+tail+"\nPercentage of head vs tail:"+(head/tail*100));	
+				System.out.println("Head: "+head+"\tTail: "+tail+"\nPercentage of head :"+((head*100)/number));	
 			}
 
 				/**
@@ -247,7 +247,7 @@ public class Utility {
 				 * @param number  added decimal number
 				 */
 				public static void decimaltobinary(int number)
-				{
+				{ String string="";
 					int binary[]=new int[32];
 					int i=0;
 					while(number>0)
@@ -256,8 +256,14 @@ public class Utility {
 						number=number/2;
 						 i++;
 					}
-					for(int j=i-1;j>=0;j--)
-						System.out.print(binary[j]);
+					for(int j=i-1;j>=0;j--) {
+						string=string+binary[j];
+					}
+						System.out.print(string);
+						int stringtointeger=Integer.parseInt(string);
+						String result=String.format("%032d",stringtointeger);
+						System.out.println(result);
+					
 				}
 				
 				/**
