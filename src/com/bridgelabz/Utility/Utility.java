@@ -246,9 +246,9 @@ public class Utility {
 				/**
 				 * @param number  added decimal number
 				 */
-				public static void decimaltobinary(int number)
+				public static String decimaltobinary(int number)
 				{ String string="";
-					int binary[]=new int[32];
+					int binary[]=new int[8];
 					int i=0;
 					while(number>0)
 					{
@@ -259,10 +259,11 @@ public class Utility {
 					for(int j=i-1;j>=0;j--) {
 						string=string+binary[j];
 					}
-						System.out.print(string);
+					System.out.println("Decimal To Binary:"+string);
 						int stringtointeger=Integer.parseInt(string);
-						String result=String.format("%032d",stringtointeger);
-						System.out.println(result);
+						String result=String.format("%08d",stringtointeger);
+						System.out.println("4 Byte string: "+result);
+						return result;
 					
 				}
 				
@@ -287,9 +288,84 @@ public class Utility {
 		            }
 		        }
 		        System.out.println(sum);
+				
 				}
 				
+				public static void binary(String result) {
+					
+					    
+					String[]split=new String[2];
+					int length=result.length();
+					split[0]=result.substring(0,length/2);
+					split[1]=result.substring(length/2,length);
+					System.out.println(split[0]);
+					System.out.println(split[1]);
+					String temp=split[0];
+					split[0]=split[1];
+					split[1]=temp;
+					String newstring=split[0].concat(split[1]);
+					int number=Integer.parseInt(newstring);
+					
+					System.out.format("%08d",number);
+					int rem=0,sum=0,count=0;
+					while(number>0) {
+					
+						rem=number%10;
+
+						number=number/10;
+						sum=sum+(rem*(int)Math.pow(2,count));
+						count++;
+ 
+				}
+					System.out.println("\n"+sum);
+				}
+				
+				
+				public static void largestsmallest(int arr[],int length) {
+					int small=arr[0];
+					int largest=arr[0];
+					
+					for(int i=0;i<length;i++)
+					{
+						  if(arr[i]<small) {
+							  small=arr[i];
+						  }
+						  if(largest<arr[i]) {
+							  largest=arr[i];
+						  }
+					}
+					
+					int secondsmallest=arr[0];
+					int secondlargest=arr[0];
+					for(int i=0;i<length;i++) {
+						if(arr[i]<secondsmallest&&arr[i]!=small)
+						{
+							secondsmallest=arr[i];
+						}
+						if(secondlargest<arr[i]&&arr[i]!=largest)
+						{
+							secondlargest=arr[i];
+						}
+					}
+					System.out.println("Second Smallest number: "+secondsmallest);
+					System.out.println("Second largest number: "+secondlargest);
+				}
+				
+				public static void repetednumber(int[] array,int length) {
+					for(int i=0;i<length;i++) {
+						for(int j=i+1;j<length;j++) {
+							
+							if(array[i]==array[j])
+								System.out.println("duplicate number:"+array[i]);
+							
+						}
+					}
+				}
+
 }
+				
+				
+
 			
 			
 			
