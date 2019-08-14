@@ -23,7 +23,9 @@ public class DayOfWeek {
 		 year=Integer.parseInt(args[2]);
 		System.out.println("day: "+day+"\nmonth: "+month+"\nyear: "+year);
 		int Answer=Utility.dayofweek(day,month,year);
+
 		if(Answer==1) 
+
 		{
 			System.out.println("Monday");
 		}
