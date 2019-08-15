@@ -547,6 +547,37 @@ public static void binary(int number) {
 					System.out.println("\n"+sum);
 				}
 				
+				/**
+				 *  Purpose: calculate most frequent number.
+				 * @param 	arrays	random number store in array.
+				 */
+
+				public static void rolldie(int[] array) {
+	
+					Arrays.sort(array);
+					int maxcount=1,currentcount=1,result=array[0];
+					int n=array.length;
+					int i;
+					for( i=1;i<n;i++)
+					{
+						if(array[i]==array[i-1])
+							currentcount++;
+						else{
+							if(currentcount>maxcount) {
+							maxcount=currentcount;
+							result=array[i-1];
+							}
+						currentcount=1;
+						}
+					}
+				if(currentcount>maxcount) {
+					maxcount=currentcount;
+					result=array[n-1];
+				}
+			System.out.println("Repeterd number"+result);
+		}
+
+
 				
 				public static void largestsmallest(int arr[],int length) {
 					int small=arr[0];
