@@ -1,26 +1,35 @@
-package com.bridgelabz.javaconditionprograms;
+/******************************************************************************
+ 
+ *  Purpose: Rolling dies N times and calculate maximum number of times between 1 and 6.
+ *  
+ *  @author  PriyankaTimgol
+ *  @version 1.0
+ *  @since   14-08-2017
+ *
+ ******************************************************************************/
+
+package com.bridgelabz.conditionalprograms;
 
 import java.util.Random;
 import java.util.Scanner;
 
-import com.bridgelabz.Utility.Utility;
+import com.bridgelabz.utility.Utility;
 
 public class RollDie {
 
 	public static void main(String[] args) {
 		Scanner scanner=new Scanner(System.in);
 		System.out.println("Enter the number of times:");
-		int n=scanner.nextInt();
+		int number=scanner.nextInt();
 		Random random=new Random();
-		int[] arr=new int[n];
-		int length=arr.length;
-		for(int i=0;i<length;i++) {
-			arr[i]=random.nextInt(6)+1;
-			System.out.println(arr[i]);
+		int i;
+		int[] array=new int[number];
+		System.out.println("Random numbers are: ");
+		for( i=0;i<number;i++) {
+			array[i]= random.nextInt(6)+1;
+			System.out.println(array[i]);
 		}
 		
-		
-		//Utility.rolldie(arr,length);
-	}
-
+		Utility.rolldie(array);
+}
 }
