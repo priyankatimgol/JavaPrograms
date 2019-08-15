@@ -666,6 +666,54 @@ public double cos(double angle) {
 	return sum;
 }
 
+/**
+ * Purpose: find given string is anagram or not.  
+ * 
+ * @param string1 added string1
+ * @param string2 added string2
+ */
+public static boolean isAnagram(String string1,String string2) {
+	
+	String stirng=string1.replaceAll("\\s", "");
+	String stirng3=string2.replaceAll("\\s", "");
+	boolean anagram=true;
+	if(string1.length()!=string2.length()) {
+		anagram=false;
+	}
+	else {
+		
+		char[] stringarray1=string1.toLowerCase().toCharArray();
+		char[] stringarray2=string2.toLowerCase().toCharArray();
+		Arrays.sort(stringarray1);
+		Arrays.sort(stringarray2);
+		boolean anagram1=Arrays.equals(stringarray1, stringarray2);
+	}
+	if(anagram) {
+		return true;
+	}
+	else 
+		
+	return false;
+	}
+
+
+	
+
+	/**
+	 * @param string Enter string
+	 * @return true or false
+	 */
+	public static boolean palindrome(String string) {
+		String reverse="";
+		int length=string.length();
+		for(int i=length-1;i>=0;i--) {
+				reverse=reverse+string.charAt(i); }
+		if(string.equals(reverse))
+			return true;
+		else 
+			return false;
+		
+	}
 
 }
 				
