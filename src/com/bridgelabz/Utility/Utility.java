@@ -620,17 +620,42 @@ public static void binary(int number) {
 					}
 				}
 
-					public static void primefactor(int number) {
-						for(int i=2;i<number;i++) {
-							while(number%i==0) {
-								System.out.println(i+" ");
-								number=number/i;
-							}
-						}
-						if(number>2) {
-							System.out.println(number);
-						}
-					}
+					
+/**
+ *  Purpose: Calculate prime factor of given number.
+ * @param 	number	number to be add.
+ */
+public void primeFactor(int number) {
+	
+	for(int i = 2; i*i<=number; i++) {
+         while(number%i == 0) {
+            System.out.println(i+" ");
+            number = number/i;
+         }
+      }
+}
+
+
+/**
+ * @param angle	Cos angle to be add.
+ * @return sum	Return sum of taylor series. 
+ */
+public double cos(double angle) {
+	angle = angle % (2 * Math.PI);
+	System.out.println("Angle in radian: "+angle);
+    double term = angle;      // ith term = x^i / i!
+    double sum  = 1.0;      // sum of first i terms in taylor series
+
+    for (int i = 2; term != 0.0; i++) {
+    	
+    	term *= (angle / i);
+        if (i % 4 == 2) sum -= term;
+        if (i % 4 == 0 ) sum += term;
+	}
+	return sum;
+}
+
+
 }
 				
 				
