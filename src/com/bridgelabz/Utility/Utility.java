@@ -609,16 +609,27 @@ public static void binary(int number) {
 					System.out.println("Second largest number: "+secondlargest);
 				}
 				
-				public static void repetednumber(int[] array,int length) {
-					for(int i=0;i<length;i++) {
-						for(int j=i+1;j<length;j++) {
-							
-							if(array[i]==array[j])
-								System.out.println("duplicate number:"+array[i]);
-							
-						}
-					}
-				}
+				
+/**
+ * Purpose: Find duplicate number in given array.
+ * 
+ * @param 	array	given array
+ * @return	array[]	return duplicate number
+ */
+public void duplicateNumber(int[] array) {
+	Arrays.sort(array);
+	int length=array.length;
+	if(array[0]==array[1])
+		System.out.print(" "+array[0]);
+	for(int i=1;i<length;i++) {
+		if(array[i]==array[i-1]&&array[i]==array[i+1]) {
+			System.out.print(" "+array[i]);
+		}
+	}
+	if(array[length-2]==array[length-1])
+		System.out.print(" "+array[length-1]);
+}
+
 
 					
 /**
