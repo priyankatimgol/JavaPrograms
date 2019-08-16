@@ -12,15 +12,15 @@ public class RollDie {
 		System.out.println("Enter the number of times:");
 		int n=scanner.nextInt();
 		Random random=new Random();
-		int[] arr=new int[n];
-		int length=arr.length;
+		int[] array=new int[n];
+		int length=array.length;
 		for(int i=0;i<length;i++) {
-			arr[i]=random.nextInt(6)+1;
-			System.out.println(arr[i]);
+			array[i]=random.nextInt(6)+1;
+			System.out.println(array[i]);
 		}
 		
 		
-		//Utility.rolldie(arr,length);
+		Utility.rolldie(array);
 	}
 
 }

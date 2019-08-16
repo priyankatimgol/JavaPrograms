@@ -1,5 +1,6 @@
 
 package com.bridgelabz.Utility;
+import java.util.Arrays;
 import java.util.Random;
 
 /******************************************************************************
@@ -198,13 +199,37 @@ public class Utility {
 			 * @return day
 			 * 
 			 */
-			public static int dayofweek(int day,int month,int year) {
+			public static String dayofweek(int day,int month,int year) {
 				
 				int year1=year-(14-month)/12;
 				int year2= year1 + year1/4 - year1/100 + year1/400;
 				int month1 = month + 12 *((14 - month ) / 12)- 2;
 				int day1= (day + year2 + 31 *month1/12)% 7;
-				return day1;
+				
+				String[] array= {"","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday","Null"};
+				if(day1==1) 
+					return array[1];
+				else if(day1==2) {
+					return array[2];
+				}
+				else if(day1==3) {
+					return array[3];
+					}
+				else if(day1==4) {
+					return array[4];
+				}
+				else if(day1==5) {
+					return array[5];
+				}
+				else if(day1==6) {
+					return array[6];
+				}
+				else if(day1==0) {
+					return array[7];
+				}
+				else {
+					return array[8];
+				}
 				
 			}
 			/**
@@ -316,68 +341,7 @@ public static void binary(int number) {
     
 
 
-			
-//
-//			/**
-//			 * @param temperature Enter temperature is larger than 50 
-//			 * @param speed Enter speed  is larger than 120 or less than 3
-//			 * @return wind value
-//			 */
-//			public static double windchill(double temperature,double speed) {
-//				
-//				double wind=35.74+0.6215*temperature+(0.4275*temperature-35.75)*Math.pow(0,16);
-//				return wind;
-//			} 
-//			
-//			/**
-//			 * @param day day added
-//			 * @param month month added
-//			 * @param year year added
-//			 * @return day
-//			 * 
-//			 */
-//			public static int dayofweek(int day,int month,int year) {
-//				
-//				int year1=year-(14-month)/12;
-//				int year2= year1 + year1/4 - year1/100 + year1/400;
-//				int month1 = month + 12 *((14 - month ) / 12)- 2;
-//				int day1= (day + year2 + 31 *month1/12)% 7;
-//				return day1;
-//				
-//			}
-//			/**
-//			 * @param principle principle added
-//			 * @param year year added
-//			 * @param Rate Rate added
-//			 * @return monthly compound interest
-//			 */
-//			public static double  carloan(double principle,double year,double Rate) {
-//				
-//				double number=12*year;
-//				double rate=Rate/(12*100);
-//			    double payment=(principle*rate)/(1-(Math.pow((1+rate),-number)));
-//				return payment;
-//				
-//			}
-//			/**
-//			 * @param angle Entered angle in radians
-//			 */
-//			public static void trig(double angle) {
-//				
-//				double sin=Math.sin(angle);
-//				System.out.println("angle in sin: "+sin);
-//				double cos=Math.cos(angle);
-//				System.out.println("angle in cos: "+cos);
-//				double tan=Math.tan(angle);
-//				System.out.println("angle in tan: "+tan);
-//				double cot=1/tan;
-//				System.out.println("angle in cot: "+cot);
-//				double cosec=1/sin;
-//				System.out.println("angle in cosec: "+cosec);
-//				double sec=1/cos;
-//				System.out.println("angle in sec: "+sec);
-//				}
-//			
+	
 			/*************** Condition, Loops and Logical Programs *****************/
 			
 			/**
@@ -588,6 +552,37 @@ public static void binary(int number) {
 						}
 					}
 				}
+				
+				
+				
+				
+				
+				public static void rolldie(int[] array) {
+					
+				Arrays.sort(array);
+				int maxcount=1,currentcount=1,result=array[0];
+				int n=array.length;
+				int i;
+				for( i=1;i<n;i++)
+				{
+					if(array[i]==array[i-1])
+						currentcount++;
+					else{
+						if(currentcount>maxcount) {
+						maxcount=currentcount;
+						result=array[i-1];
+						}
+					currentcount=1;
+					}
+				}
+			if(currentcount>maxcount) {
+				maxcount=currentcount;
+				result=array[n-1];
+			}
+		System.out.println("Repeterd number"+result);
+	}
+
+				
 
 					public static void primefactor(int number) {
 						for(int i=2;i<number;i++) {
@@ -598,6 +593,84 @@ public static void binary(int number) {
 						}
 						if(number>2) {
 							System.out.println(number);
+						}
+					}
+					
+					public static boolean isAnagram(String string1,String string2) {
+						
+						String stirng=string1.replaceAll("\\s", "");
+						String stirng3=string2.replaceAll("\\s", "");
+						boolean anagram=true;
+						if(string1.length()!=string2.length()) {
+							anagram=false;
+						}
+						else {
+							
+							char[] stringarray1=string1.toLowerCase().toCharArray();
+							char[] stringarray2=string2.toLowerCase().toCharArray();
+							Arrays.sort(stringarray1);
+							Arrays.sort(stringarray2);
+							boolean anagram1=Arrays.equals(stringarray1, stringarray2);
+						}
+						if(anagram) {
+							return true;
+						}
+						else 
+							
+						return false;
+						}
+
+
+						
+
+						/**
+						 * @param string Enter string
+						 * @return true or false
+						 */
+						public static boolean palindrome(String string) {
+							String reverse="";
+							int length=string.length();
+							for(int i=length-1;i>=0;i--) {
+									reverse=reverse+string.charAt(i); }
+							if(string.equals(reverse))
+								return true;
+							else 
+								return false;
+							
+						}
+
+					
+					
+					public static void permutaion(char[] charatacter,int currentindex) {
+						if(currentindex==charatacter.length) {
+							System.out.println(String.valueOf(charatacter));
+						}
+						for(int i=currentindex;i<charatacter.length;i++) {
+							swap(charatacter,currentindex,i);
+							permutaion(charatacter,currentindex+1);
+							swap(charatacter,currentindex,i);
+						}
+						
+						
+					}
+					
+					public static void swap(char[] charatacter,int i,int j) {
+						char temp=charatacter[i];
+						charatacter[i]=charatacter[j];
+						charatacter[j]=temp;
+					}
+					public static void recursion(String string , String answer)
+					{
+						if(string.length()==0)
+						{
+							System.out.println(" ");
+						}
+						for(int i=1;i<string.length();i++) {
+							char ch=string.charAt(i);
+							String string1=string.substring(0,i)+(i+1);
+							recursion(string1,answer+ch);
+							
+							
 						}
 					}
 }
