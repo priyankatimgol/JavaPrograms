@@ -10,9 +10,9 @@ public class Largestsmallest {
 	public static void main(String[] args) {
 		Scanner scanner=new Scanner(System.in);
 		System.out.println("Enter the number of elements:");
-		int n=scanner.nextInt();
+		int elements=scanner.nextInt();
 		Random random=new Random();
-		int[] arr=new int[n];
+		int[] arr=new int[elements];
 		int length=arr.length;
 		for(int i=0;i<length;i++) {
 			arr[i]=random.nextInt(100)+1;

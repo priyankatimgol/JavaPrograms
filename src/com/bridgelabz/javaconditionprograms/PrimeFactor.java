@@ -11,6 +11,7 @@ public class PrimeFactor {
 		System.out.println("Enter the number:");
 		int number =scanner.nextInt();
 		Utility.primefactor(number);
+		scanner.close();
 	}
 
 }

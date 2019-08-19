@@ -105,73 +105,73 @@ public class Utility {
 				int sum=firstnumber+secondnumber;
 				return sum;
 				}
-		/**
-	 	* @param day Enter day
-	 	* @param month enter month
-		 * @return true if month is between 3 and 6 ,20<=day<=31
-		 */
-		public static boolean season(int day, int month)
-		{
-		if(month>=3&&month<=6&&day>=20&&day<=31)
-		{
-      			if(month==3)
+			/**
+			 * @param day Enter day
+			 * @param month enter month
+			 * @return true if month is between 3 and 6 ,20<=day<=31
+		 	*/
+			public static boolean season(int day, int month)
 			{
-        			if(day>=20)
-          				return true;
-        			else
-          				return false;
-      			}
-      			else if(month==6)
-			{
-        			if(day<=20)
-          				return true;
-        			else
-          				return false; 
+				if(month>=3&&month<=6&&day>=20&&day<=31)
+				{
+					if(month==3)
+					{
+						if(day>=20)
+							return true;
+						else
+							return false;
+					}
+					else if(month==6)
+						{
+						if(day<=20)
+							return true;
+						else
+							return false; 
+						}
+					else
+						return true;
+				}
+				else
+					return false;
 			}
-			else
-				return true;
-  		}
-		else
-			return false;
-		}
 	
-		/**
-		 * @param firstnumber first number entered
-		 * @param secondnumber second number entered
-		 * @param thirdnumber third number entered
-		 */
-		public static void quadNumber(double firstnumber,double secondnumber,double thirdnumber)
-		{
-		double delta,Root1,Root2;
-		delta=secondnumber*secondnumber-4*firstnumber*thirdnumber;
-		if(delta>=0)
-		{
-			Root1 = (-secondnumber + Math.sqrt(delta))/(2*firstnumber);
-			Root2 =(-secondnumber - Math.sqrt(delta))/(2*firstnumber);
-			System.out.println(" "+Root1+" "+Root2);
+			/**
+			 * @param firstnumber first number entered
+			 * @param secondnumber second number entered
+			 * @param thirdnumber third number entered
+			 */
+			public static void quadNumber(double firstnumber,double secondnumber,double thirdnumber)
+			{
+				double delta,Root1,Root2;
+					delta=secondnumber*secondnumber-4*firstnumber*thirdnumber;
+					if(delta>=0)
+					{
+						Root1 = (-secondnumber + Math.sqrt(delta))/(2*firstnumber);
+						Root2 =(-secondnumber - Math.sqrt(delta))/(2*firstnumber);
+						System.out.println(" "+Root1+" "+Root2);
 
-		}
-		else if(delta == 0)
-		{
-			Root1 = Root2 = -secondnumber / (2 * firstnumber);
-			System.out.format("root1 = root2 = "+ Root1);
-		}
+					}
+					else if(delta == 0)
+					{
+						Root1 = Root2 = -secondnumber / (2 * firstnumber);
+						System.out.format("root1 = root2 = "+ Root1);
+					}
     
-   		 else 
-    		{
-    		 Root1 = -secondnumber / (2 *firstnumber);
-    		 Root2 = (Math.sqrt(-delta) / (2 * firstnumber));
-    		System.out.format("root1 = "+Root1+ "and"+ "root2 ="+Root2);
-    		}
+					else 
+					{
+						Root1 = -secondnumber / (2 *firstnumber);
+						Root2 = (Math.sqrt(-delta) / (2 * firstnumber));
+						System.out.format("root1 = "+Root1+ "and"+ "root2 ="+Root2);
+					}
     
-		}
-		/**
-		 * @param firstnumber first number added
-	 	* @param secondnumber second number added
-		 * @param thirdnumber third number added
-	 	* @param fourthnumber fourth number added
-		 * @param fivenumber five number added
-		 */
+			}
+			/**
+			 * @param firstnumber first number added
+			 * @param secondnumber second number added
+			 * @param thirdnumber third number added
+			 * @param fourthnumber fourth number added
+				 * @param fivenumber five number added
+			 */
 		public static void stats5(double firstnumber,double secondnumber,double thirdnumber,double fourthnumber,double fivenumber) {
 		double average=(firstnumber+secondnumber+thirdnumber+fourthnumber+fivenumber)/5;
 		double maximum=Math.max(firstnumber,Math.max(secondnumber, Math.max(thirdnumber, Math.max(fourthnumber, fivenumber))));
@@ -269,75 +269,75 @@ public class Utility {
 			
     
 			/**
-	 * @param tempreture added temperature.
-	 * @param choice enter your choice 1 or 2
-	 * @return if you enter 1 then then print result in fahrenhieit or 2 then celsius
-	 */
-	public static double temperatureConversion(double tempreture,int choice)
-	{ 
-		if(choice==1) {
-			double resultfahrenhieit = (tempreture*9/5)+32;
-			return resultfahrenhieit;
-		}
-		else {
-			double resultcelsius = (tempreture-32)*5/9;
-			return resultcelsius;
-		}
+			 * @param tempreture added temperature.
+			 * @param choice enter your choice 1 or 2
+			 * @return if you enter 1 then then print result in fahrenhieit or 2 then celsius
+			 */
+			public static double temperatureConversion(double tempreture,int choice)
+			{ 
+				if(choice==1) {
+					double resultfahrenhieit = (tempreture*9/5)+32;
+					return resultfahrenhieit;
+				}
+				else {
+					double resultcelsius = (tempreture-32)*5/9;
+					return resultcelsius;
+				}
 
-	}
+			}
 	
 	
 	
 		
-/**
- * @param number Entered number in decimal
- */
-public static void binary(int number) {
+			/**
+			 * @param number Entered number in decimal
+			 */
+			public static void binary(int number) {
 	
-	int arr[]=new int[32];
-	String string="";
-	int i=0;
-	while(number>0)
-	 {
-		arr[i]=number % 2;
-		number=number/2;
-		i++;	
-	}
-	for(int j=i-1;j>=0;j--) {
-		string=string+""+arr[j];
-	}
-	System.out.println(string);
-	int Stringtointeger=Integer.parseInt(string);
-	String string1=String.format("%08d",Stringtointeger);
-	System.out.println(string1);
-	String[] split=new String[2];
-	int length=string1.length();
-	split[0]=string1.substring(0, length/2);
-	split[1]=string1.substring(length/2, length);
-	System.out.println(split[0]);
-	System.out.println(split[1]);
+				int arr[]=new int[32];
+				String string="";
+				int i=0;
+				while(number>0)
+				{
+					arr[i]=number % 2;
+					number=number/2;
+					i++;	
+				}
+				for(int j=i-1;j>=0;j--) {
+					string=string+""+arr[j];
+				}
+				System.out.println(string);
+				int Stringtointeger=Integer.parseInt(string);
+				String string1=String.format("%08d",Stringtointeger);
+				System.out.println(string1);
+				String[] split=new String[2];
+				int length=string1.length();
+				split[0]=string1.substring(0, length/2);
+				split[1]=string1.substring(length/2, length);
+				System.out.println(split[0]);
+				System.out.println(split[1]);
 	
-	String temp=split[0];
-	split[0]=split[1];
-	split[1]=temp;
+				String temp=split[0];
+				split[0]=split[1];
+				split[1]=temp;
 	
-	String newstring=split[0].concat(split[1]);
-	int decimal=Integer.parseInt(newstring);
-	System.out.println("binary number:"+decimal);
+				String newstring=split[0].concat(split[1]);
+				int decimal=Integer.parseInt(newstring);
+				System.out.println("binary number:"+decimal);
 	
 	
-	int rem=0,sum=0,count=0;
-	while(decimal>0)
-	{
-		rem=decimal%10;
-		decimal=decimal/10;
-		sum=sum+(rem*(int)Math.pow(2,count));
-		count++;
+				int rem=0,sum=0,count=0;
+				while(decimal>0)
+				{
+					rem=decimal%10;
+					decimal=decimal/10;
+					sum=sum+(rem*(int)Math.pow(2,count));
+					count++;
 		
-	}
-	System.out.println("\nBinary To Decimal:"+sum);
+				}
+				System.out.println("\nBinary To Decimal:"+sum);
 
-}
+			}
     
 
 
@@ -370,6 +370,31 @@ public static void binary(int number) {
 				System.out.println("Head: "+head+"\tTail: "+tail+"\nPercentage of head :"+((head*100)/number));	
 			}
 
+			
+			/**
+			 * @param lower added lower value
+			 * @param upper added upper value
+			 */
+			public static void primenumber(int lower, int upper) {
+				
+				int flag=1;
+				for(int i=lower;i<=upper;i++) {
+					for(int j=2;j<i;j++) {
+						if(i%j==0) {
+							flag=0;
+						    break;
+						}
+						else
+						{
+							flag=1;
+						}
+					}
+					if(flag==1)
+					{
+						System.out.println(i);
+					}
+				}
+				}
 				/**
 				 * @param number added number is power of 2
 				 */
@@ -381,105 +406,137 @@ public static void binary(int number) {
 					System.out.println("power of 2: "+((int)Math.pow(2,i)));
 					}
 				}
+
 				/**
-				 * @param number added number
+				 * Purpose:Perform harmonic series.
+				 * @param number  number to be added
 				 */
-				public static void harmonicnumber(int number) {
-					
-					double sum=0;
-					for(int i=1;i<=number;i++)
-					{
-						sum=sum+1.0/i;
+				public static double harmonicseries(int number) {
+					String string="1/1";
+					double sum=1;
+					for(int i=2;i<=number;i++) {
+						string=string+"+"+"1/"+i;
+						sum =sum+ 1.0 / i;
+		
 					}
-					System.out.println(sum);
+					System.out.println("Harmonic Number: "+string);
+					return sum;
+
 				}
-				
+
+
 				/**
+				 * purpose: Find the square root of nonnegative number
 				 * @param number added number
 				 * @return square root
 				 */
-				public static double sqrt(double number) {
-					
-					double temp=number;
+				public static double sqrt(double number1) {
+	
+					double temp=number1;
 					double epsilon = 1e-15;
-					while(Math.abs(temp-number/temp) > epsilon*temp)
+					while(Math.abs(temp-number1/temp) > epsilon*temp)
 					{
-						 temp =(number/temp+temp)/2.0;
+						temp =(number1/temp+temp)/2.0;
 					}
 					return temp;
-					
-					
+	
+	
 				}
+
+
 				/**
-				 * @param lower added lower value
-				 * @param upper added upper value
+				 * purpose:number is prime or not
+				 * @param integernumber added
+				 * @return true or false
 				 */
-				public static void primenumber(int lower, int upper) {
-					
-					int flag=1;
-					for(int i=lower;i<=upper;i++) {
-						for(int j=2;j<i;j++) {
-							if(i%j==0) {
-								flag=0;
-							    break;
-							}
-							else
-							{
-								flag=1;
-							}
+				public static boolean primenumber(int integernumber) {
+	
+					int count=0;
+					for(int i=2;i<integernumber;i++) {
+	 
+						if(integernumber%i==0) {
+							count=count+1;
+							break;
 						}
-						if(flag==1)
-						{
-							System.out.println(i);
-						}
+			
 					}
+					if(count==0)
+					{
+						return true;
 					}
+					else 
+						return false;
+		
+	}
+
+
+
 				/**
+				 * purpose:decimal to binary conversion.
+				 * 
 				 * @param number  added decimal number
 				 */
-				public static String decimaltobinary(int number)
+				public static String decimaltobinary(int decimal)
 				{ String string="";
-					int binary[]=new int[8];
-					int i=0;
-					while(number>0)
-					{
-						 binary[i]=number%2;
-						number=number/2;
-						 i++;
-					}
-					for(int j=i-1;j>=0;j--) {
-						string=string+binary[j];
-					}
-					System.out.println("Decimal To Binary:"+string);
-						int stringtointeger=Integer.parseInt(string);
-						String result=String.format("%08d",stringtointeger);
-						System.out.println("4 Byte string: "+result);
-						return result;
-					
+				int binary[]=new int[8];
+				int i=0;
+				while(decimal>0)
+				{
+					binary[i]=decimal%2;
+					decimal=decimal/2;
+					i++;
 				}
-				
+				for(int j=i-1;j>=0;j--) {
+					string=string+binary[j];
+				}
+				int stringtointeger=Integer.parseInt(string);
+				String result=String.format("%08d",stringtointeger);
+				System.out.println("1 Byte string: "+result);
+				return result;
+	
+				}
+	
+
+
 				/**
+				 * purpose:calculate sin angle.
+				 * 
 				 * @param angle enter the angle
 				 */
-				public static void sin(double angle) {
+				public static double sin(double angle) {
 					
 				double term = 1.0;    
 			    double sum  = 0.0;    
 			    angle =  (angle % (2 * Math.PI));
 
-		        for (int i = 1; term != 0.0; i++) {
-		            term=term*(angle / i);
-		            if (i % 4 == 1)
-		            {
-		            	sum=sum+term;
-		            }
-		            if (i % 4 == 3) 
-		            {
-		            	sum=sum-term;
-		            }
-		        }
-		        System.out.println(sum);
+			    for (int i = 1; term != 0.0; i++) {
+			        term=term*(angle / i);
+			        if (i % 4 == 1)
+			        {
+			        	sum=sum+term;
+			        }
+			        if (i % 4 == 3) 
+			        {
+			        	sum=sum-term;
+			        }
+			    }
+			    return sum;
 				
+				}
+
+				/**
+				 * purpose:Find the factorial of given number.
+				 * 
+				 * @param factnumber number to be added
+				 * @return factorial value
+				 */
+				public static long factorial(long factnumber) {
+					long fact=1;
+					for(int i=1;i<=factnumber;i++)
+					{
+						fact=fact*i;
+					}
+					return fact;
 				}
 				
 				public static void binary(String result) {
@@ -579,20 +636,21 @@ public static void binary(int number) {
 				maxcount=currentcount;
 				result=array[n-1];
 			}
-		System.out.println("Repeterd number"+result);
-	}
+			System.out.println("Repeterd number"+result);
+				}
 
 				
 
 					public static void primefactor(int number) {
-						for(int i=2;i<number;i++) {
+						System.out.println("Prime factor of given number: ");
+						for(int i=2;i*i<=number;i++) {
+							
 							while(number%i==0) {
+								
 								System.out.println(i+" ");
 								number=number/i;
 							}
-						}
-						if(number>2) {
-							System.out.println(number);
+							
 						}
 					}
 					
@@ -641,6 +699,12 @@ public static void binary(int number) {
 
 					
 					
+					/**
+					 * purpose: Permutation of string using recursive method.
+					 * 
+					 * @param charatacter
+					 * @param currentindex
+					 */
 					public static void permutaion(char[] charatacter,int currentindex) {
 						if(currentindex==charatacter.length) {
 							System.out.println(String.valueOf(charatacter));
@@ -654,6 +718,11 @@ public static void binary(int number) {
 						
 					}
 					
+					/**
+					 * @param charatacter
+					 * @param i
+					 * @param j
+					 */
 					public static void swap(char[] charatacter,int i,int j) {
 						char temp=charatacter[i];
 						charatacter[i]=charatacter[j];
@@ -673,9 +742,127 @@ public static void binary(int number) {
 							
 						}
 					}
-}
+					
+
+					/**
+					 * @param 	angle	Cos angle to be add.
+					 * @return	sum		Return sum of taylor series. 
+					 */
+					public static double cos(double angle) {
+						angle = angle % (2 * Math.PI);
+						System.out.println("Angle in radian: "+angle);
+						double term = angle;      // ith term = x^i / i!
+						double sum  = 1.0;      // sum of first i terms in taylor series
+
+						for (int i = 2; term != 0.0; i++) {
+    	
+							term *= (angle / i);
+							if (i % 4 == 2) sum -= term;
+							if (i % 4 == 0 ) sum += term;
+						}
+						return sum;
+					}
+					/**
+					 * purpose:calculate future value.
+					 * 
+					 * @param presentvalue added presentvalue
+					 * @param annualinterestrate added annualinterestrate
+					 * @param numberofperiods  added numberofperiods
+					 * @return Future value
+					 */
+					public static double future(double presentvalue,double annualinterestrate,double numberofperiods) {
+						
+						double Future=presentvalue*Math.pow(1+annualinterestrate,numberofperiods);
+						return Future;
+					}
+
+					/**
+					 * purpose:calculate present value.
+					 * 
+					 * @param fv future value to be added
+					 * @param r  annual interest rate to be added
+					 * @param n  number of periods to be added
+					 * @return  present value
+					 */
+					public static double present(double fv,double r,double n) {
+	
+						double Present=fv/Math.pow(1+r,n);
+						return Present;
+					}
+					
+
+
+					/**
+					 * Purpose: check three points are colinear using slope formula. 
+					 * @param x1
+					 * @param y1
+					 * @param x2
+					 * @param y2
+					 * @param x3
+					 * @param y3
+					 * @return
+					 */
+					public static boolean slope(float x1, float y1, float x2, float y2,float x3, float y3){
+         
+						{ 
+							float slopeAB=(y2 - y1) / (x2 - x1); 
+							float slopeBC=(y3-y2)/(x3-x2);
+							float slopeAC=(y1-y3)/(x1-x3);
+							if(slopeAB==slopeBC && slopeBC==slopeAC) {
+								return true;
+							}
+							else
+								return false;
+						} 
+
+					} 
+					/**
+					 * purpose:check three points are colinear using Triangle formula
+					 * @param x4
+					 * @param y4
+					 * @param x5
+					 * @param y5
+					 * @param x6
+					 * @param y6
+					 * @return
+					 */
+					public static boolean triangle(float x4, float y4, float x5, float y5,float x6, float y6){
+
+						double determinant= 0.5*(((x4-x5)*(y5-y6))-((x5-x6)*(y4-y5)));
+						if(determinant==0)
+						{
+
+							return true;
+
+						} 
+						else {
+
+							return false;
+						}
+						}
+					
+					  public static int Maximum(int[] array){ 
+						    int maxValue = array[0]; 
+						    for(int i=1;i < array.length;i++){ 
+						      if(array[i] > maxValue){ 
+						         maxValue = array[i]; 
+						      } 
+						    } 
+						    return maxValue; 
+						  }
+						 
+						
+						  public static int Minimum(int[] array){ 
+						    int minValue = array[0]; 
+						    for(int i=1;i<array.length;i++){ 
+						      if(array[i] < minValue){ 
+						        minValue = array[i]; 
+						      } 
+						    } 
+						    return minValue; 
+						  } 
 				
-				
+}		
 
 			
 			

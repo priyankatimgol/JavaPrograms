@@ -16,7 +16,8 @@ public class HarmonicNumber {
 	public static void main(String[] args) {
 		int number=Integer.parseInt(args[0]);
 		System.out.println("number is: "+number);
-		Utility.harmonicnumber(number);
+		double result=Utility.harmonicseries(number);
+		System.out.println("Sum of harmonic series:"+result);
 	}
 
 }
