@@ -3,6 +3,7 @@ package com.bridgelabz.functionprograms;
 import java.util.Scanner;
 
 import com.bridgelabz.Utility.Utility;
+import com.bridgelabz.javaconditionprograms.Sqrt;
 
 public class Mathfunction {
 
@@ -10,7 +11,8 @@ public class Mathfunction {
 		
 				Scanner scanner=new Scanner(System.in);
 				System.out.println("1:Harmonic series \n2:Sin of angle \n3:Cos of angle \n4:Binary of a number: \n5:square root of nonnegative number "
-						+ "\n6:Prime number \n7:factoraial number \n8:Future value \n9:Present value \n10 check three points are colinear using slope formula \n11 check three points are colinear using Triangle formula");
+						+ "\n6:Prime number \n7:factoraial number \n8:Future value \n9:Present value \n10 check three points are colinear using slope formula "
+						+ "\n11 check three points are colinear using Triangle formula \n12:square root using overload method");
 				System.out.println("Enter your choice:");
 				int choice =scanner.nextInt();
 				switch(choice) {
@@ -124,6 +126,14 @@ public class Mathfunction {
 					boolean trianglevalue=Utility.triangle(x4,x5,x6,y4,y5,y6);
 					System.out.println(trianglevalue);
 					break;
+				case 12:
+					 System.out.println("Enter the number:");
+			    	  int Integernumber=scanner.nextInt();
+			    	  Sqrt.squareroot(Integernumber);
+			    	  double epsilon = 1e-15;
+			    	  Sqrt.squareroot(Integernumber,epsilon);
+					 break;
+					
 				default:
 					System.out.println("Please enter correct choice");
 				

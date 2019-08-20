@@ -508,7 +508,7 @@ public class Utility {
 				double term = 1.0;    
 			    double sum  = 0.0;    
 			    angle =  (angle % (2 * Math.PI));
-
+			    System.out.println(angle);
 			    for (int i = 1; term != 0.0; i++) {
 			        term=term*(angle / i);
 			        if (i % 4 == 1)
@@ -656,8 +656,8 @@ public class Utility {
 					
 					public static boolean isAnagram(String string1,String string2) {
 						
-						String stirng=string1.replaceAll("\\s", "");
-						String stirng3=string2.replaceAll("\\s", "");
+						string1=string1.replaceAll("\\s", "");
+						string2=string2.replaceAll("\\s", "");
 						boolean anagram=true;
 						if(string1.length()!=string2.length()) {
 							anagram=false;
@@ -706,6 +706,7 @@ public class Utility {
 					 * @param currentindex
 					 */
 					public static void permutaion(char[] charatacter,int currentindex) {
+						//System.out.println(charatacter);
 						if(currentindex==charatacter.length) {
 							System.out.println(String.valueOf(charatacter));
 						}

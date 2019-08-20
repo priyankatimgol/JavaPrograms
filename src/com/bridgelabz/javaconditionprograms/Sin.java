@@ -8,9 +8,10 @@ public class Sin {
 
 	public static void main(String[] args) {
 		Scanner scanner=new Scanner(System.in);
-		System.out.println("Enter the angle: ");
+		System.out.println("Enter the sin angle: ");
 		double angle=scanner.nextDouble();
-		Utility.sin(angle);
+		double result=Utility.sin(angle);
+		System.out.println("sin angle:"+result);
 		   scanner.close();     
 	    }
 
