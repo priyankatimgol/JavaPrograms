@@ -863,6 +863,36 @@ public class Utility {
 						    return minValue; 
 						  } 
 				
+						  
+			/***************String And Arrays *****************/
+						  
+		/**
+		 * Purpose:Print the sorted array using bubble sort.
+		 * 
+		 * @param array array elements to be added.
+		 * @param length  length of the array .
+		 */
+		public static void  bubblesort(int []array,int length) {
+			
+			int temp=0;
+			for(int i=0;i<length-1;i++)
+			{
+				for(int j=0;j<length-i-1;j++) {
+					
+					if(array[j]>array[j+1])
+					{
+						temp=array[j];
+						array[j]=array[j+1];
+						array[j+1]=temp;
+						}
+				}
+			}
+			System.out.println("Sorted array: ");
+			for(int i=0;i<length;i++) {
+				System.out.print(" "+array[i]);
+			}
+		}
+						  
 }		
 
 			
