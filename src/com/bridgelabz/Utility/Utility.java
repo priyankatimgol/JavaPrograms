@@ -892,7 +892,46 @@ public class Utility {
 				System.out.print(" "+array[i]);
 			}
 		}
-						  
+		
+		public static int binarysearchstring(String[] string,String search) {
+			for(int i=0;i<string.length;i++) {
+				System.out.println(string[i]);
+			}
+			int firstindex=0;
+			int lastindex=string.length-1;
+			while(firstindex<=lastindex)
+			{
+				int mid=firstindex+(lastindex-firstindex)/2;
+				int result=search.compareTo(string[mid]);
+				if(result==0)
+					return mid;
+				if(result>0)
+					firstindex=mid+1;
+				else
+					lastindex=mid-1;
+				
+			}
+			return -1;		
+		}
+		public static void InsertionSort(int[] array, int length) {
+		int temp,i,j;
+			for( i=1;i<length;i++) {
+				temp=array[i];
+				 j=i-1;
+				while(j>=0 &&array[j]>temp) {
+				array[j+1]=array[j];
+				j=j-1;
+				}
+				array[j+1]=temp;
+				
+			}
+			for(i=0;i<length;i++) {
+				System.out.println(array[i]);
+			}
+		}
+				
+		
+		
 }		
 
 			
