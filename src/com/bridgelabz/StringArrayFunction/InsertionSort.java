@@ -1,24 +1,25 @@
 package com.bridgelabz.StringArrayFunction;
 
-import java.util.Scanner;
-
 import com.bridgelabz.Utility.Utility;
 
 public class InsertionSort {
+	public static void main(String[] args)
+    {
+         String[] stringArray = {"beta", "gamma", "alpha", "epsilon", "delta"};
+        System.out.println("Unsorted array:");
+        for(int i=0;i<stringArray.length;i++) {
+        	System.out.print(stringArray[i]);
+        }
 
-	public static void main(String[] args) {
-		Scanner scanner=new Scanner(System.in);
-		System.out.println("Enter the number of elements:");
-		int elements=scanner.nextInt();
-		int []array=new int[elements];
-		int length=array.length;
-		System.out.println("Enter the elements: ");
-		for(int i=0;i<elements;i++)
-		{
-			array[i]=scanner.nextInt();
-		}
-		Utility.InsertionSort(array, length);
-		scanner.close();
-	}
+         Utility.insertionSort(stringArray);
+
+        
+    }
+
+	
+		
+	
+
+   
 
 }

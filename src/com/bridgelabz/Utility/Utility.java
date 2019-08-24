@@ -913,25 +913,28 @@ public class Utility {
 			}
 			return -1;		
 		}
-		public static void InsertionSort(int[] array, int length) {
-		int temp,i,j;
-			for( i=1;i<length;i++) {
-				temp=array[i];
-				 j=i-1;
-				while(j>=0 &&array[j]>temp) {
-				array[j+1]=array[j];
-				j=j-1;
-				}
-				array[j+1]=temp;
-				
-			}
-			for(i=0;i<length;i++) {
-				System.out.println(array[i]);
-			}
-		}
-				
+
+
+		public static void insertionSort(String[] array)
+	    {
+	        String temp="";
+	         for(int i = 1; i < array.length; i++) // ar[i] is element to insert
+	         {
+	              temp = array[i];
+	              int j = 0;
+	              for(j = i; j > 0; j--)
+	                   if(temp.compareTo(array[j - 1]) < 0)
+	                        array[j] = array[j - 1];
+	                   else
+	                       break;
+	              array[j] = temp;
+	         }
+	         for(int i = 1; i < array.length; i++) {
+	        	 System.out.println(array[i]);
+	         }
+	    }
 		
-		
+
 }		
 
 			
