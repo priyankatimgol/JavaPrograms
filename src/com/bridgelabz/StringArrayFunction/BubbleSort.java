@@ -1,7 +1,6 @@
 /******************************************************************************
  
  *  Purpose: Print the sorted array using bubble sort. 
- *  monthly
  *
  *  @author  PriyankaTimgol
  *  @version 1.0

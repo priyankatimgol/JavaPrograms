@@ -1,8 +1,3 @@
-
-package com.bridgelabz.Utility;
-import java.util.Arrays;
-import java.util.Random;
-
 /******************************************************************************
  *  Purpose: utility is logic of all programs
  *
@@ -11,11 +6,12 @@ import java.util.Random;
  *  @since   07-08-2017
  *
  ******************************************************************************/
-
-
-
-
+package com.bridgelabz.Utility;
+import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
+import com.bridgelabz.lib.BLStdIn;
+import com.bridgelabz.lib.BLStdOut;
 public class Utility {
 	
 			
@@ -668,7 +664,6 @@ public class Utility {
 							char[] stringarray2=string2.toLowerCase().toCharArray();
 							Arrays.sort(stringarray1);
 							Arrays.sort(stringarray2);
-							boolean anagram1=Arrays.equals(stringarray1, stringarray2);
 						}
 						if(anagram) {
 							return true;
@@ -893,6 +888,13 @@ public class Utility {
 			}
 		}
 		
+		/**
+		 * Purpose:Binary search 
+		 * 
+		 * @param string  enter string to be added.
+		 * @param search  search the string.
+		 * @return string found or not.
+		 */
 		public static int binarysearchstring(String[] string,String search) {
 			for(int i=0;i<string.length;i++) {
 				System.out.println(string[i]);
@@ -915,6 +917,11 @@ public class Utility {
 		}
 
 
+		/**
+		 * Purpose: Reads in strings from input and prints them in sorted order Uses insertion sort.
+		 * 
+		 * @param array array to be added.
+		 */
 		public static void insertionSort(String[] array)
 	    {
 	        String temp="";
@@ -929,12 +936,154 @@ public class Utility {
 	                       break;
 	              array[j] = temp;
 	         }
-	         for(int i = 1; i < array.length; i++) {
-	        	 System.out.println(array[i]);
+	         System.out.println("\nSorted array: ");
+	         for(int i = 0; i < array.length; i++) {
+	        	 System.out.println(array[i]+" ");
 	         }
+	         
+	         
 	    }
 		
+		/**
+		 * @param key 
+		 * @param first 
+		 * @param last
+		 * @param number
+		 */
+		public static void magicNumber(int key,int first,int last,int number) {
+			int mid=(first+last)/2;
+			int count=0,i=0;
+			System.out.println("enter yes if your value found");
+			System.out.println("enter no if your value is not found");
+		
+			if(key>first&&key<last) {
+				while(first<last && count==0&&i<=number)
+				{
+					System.out.println("\nyour value"+mid);
+					String s=scanner.nextLine();
+				char choice=s.charAt(0) ;
+				switch(choice)
+				{
+				case 'n':
+					if(mid<key)
+					{
+						first=mid+1;
+					}
+					else 
+					{
+						last=mid-1;
+					}
+					mid=(first+last)/2;
+					i++;
+					break;
+					
+				case 'y':
+					count=1;
+					System.out.println("your value is found at "+mid);
+					break;
+				
+					}
+				}
+				if(i>number)
+				System.out.println("Number not found in given iteration");
+			}
+			else
+				System.out.println("Given number is not in the list");
+		}
+		
+		public static void lyricsofpoem(String poem) {
+			String[] animal= {"Chicks","Duck","Turkey","Pig","Cow","Cat","Mule","Dog","Turtle"};
+			String[] sound= {"chick","quack","gobble","oink, oink","moo, moo","meow, meow","Heehaw","bow wow","nerp, nerp"};
+			for(int i=0;i<9;i++) {
+				System.out.println("\n*******************POEM FOR "+animal[i]+"*******************************");
+				String string1=poem.replaceAll("%ANIMAL%",animal[i]);
+				String string2=string1.replaceAll("%SOUND%",sound[i]);
+				System.out.println(string2);
+			}
+		}
+		
+		public static int[][] readInt2D() {
+			System.out.println("Enter 2D Matrix:");
+	        int m = BLStdIn.readInt();
+	        int n = BLStdIn.readInt();
+	        int[][] a = new int[m][n];
+	        System.out.println("Enter the integer number: ");
+	        for (int i = 0; i < m; i++) {
+	            for (int j = 0; j < n; j++) {
+	                a[i][j] = BLStdIn.readInt();
+	            }
+	        }
+	        return a;
+	    }
+	    public static void print(int[][] a) {
+	        int m = a.length;
+	        int n = a[0].length;
+	        BLStdOut.println(m + " " + n);
+	        for (int i = 0; i < m; i++) {
+	            for (int j = 0; j < n; j++) {
+	            	BLStdOut.printf("%9d ", a[i][j]);
+	            }
+	            BLStdOut.println();
+	        }
+	    }
 
+	    
+	    
+
+		public static double[][] readDouble2D() {
+			System.out.println("Enter 2D Matrix:");
+	        int m = BLStdIn.readInt();
+	        int n = BLStdIn.readInt();
+	        double[][] a = new double[m][n];
+	        System.out.println("Enter the number in double format: ");
+	        for (int i = 0; i < m; i++) {
+	            for (int j = 0; j < n; j++) {
+	                a[i][j] = BLStdIn.readDouble();
+	            }
+	        }
+	        return a;
+	    }
+	    public static void print(double[][] a) {
+	    	int m = a.length;
+	    	int n = a[0].length;
+	        BLStdOut.println(m + " " + n);
+	        for (int i = 0; i < m; i++) {
+	            for (int j = 0; j < n; j++) {
+	            	BLStdOut.printf("%9.5f ", a[i][j]);
+	            }
+	            BLStdOut.println();
+	        }
+	    
+		}
+
+		public static boolean[][] readboolean2D() {
+			System.out.println("Enter 2D Matrix:");
+	        int m = BLStdIn.readInt();
+	        int n = BLStdIn.readInt();
+	        boolean[][] a = new boolean[m][n];
+	        System.out.println("Enter the number: ");
+	        for (int i = 0; i < m; i++) {
+	            for (int j = 0; j < n; j++) {
+	                a[i][j] = BLStdIn.readBoolean();
+	            }
+	        }
+	        return a;
+	    }
+	   
+		public static void print(boolean[][] number) {
+			int m = number.length;
+	    	int n = number[0].length;
+	        BLStdOut.println(m + " " + n);
+	        for (int i = 0; i < m; i++) {
+	            for (int j = 0; j < n; j++) {
+	            	if(number[i][j]) BLStdOut.print("1 ");
+	            	else 			 BLStdOut.print("0 ");
+	            }
+	            BLStdOut.println();
+	        }
+			
+		}
+		
 }		
 
 			

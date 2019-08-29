@@ -1,3 +1,13 @@
+/******************************************************************************
+ 
+ *  Purpose: Binary Search the Word from Word List Print the result if the word is found or not.
+ *  
+ *  @author  PriyankaTimgol
+ *  @version 1.0
+ *  @since   16-08-2017
+ *
+ ******************************************************************************/
+
 package com.bridgelabz.StringArrayFunction;
 
 import java.io.*;
