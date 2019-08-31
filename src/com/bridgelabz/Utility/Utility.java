@@ -389,7 +389,10 @@ public class Utility {
 					{
 						System.out.println(i);
 					}
+					
 				}
+				
+				
 				}
 				/**
 				 * @param number added number is power of 2
@@ -991,6 +994,10 @@ public class Utility {
 				System.out.println("Given number is not in the list");
 		}
 		
+		/**
+		 * Purpose:Write a program to print the lyrics of the poem replace ANIMAL and its SOUND to output the complete the lyrics. 
+		 *  @param poem  poem is to be added
+		 */
 		public static void lyricsofpoem(String poem) {
 			String[] animal= {"Chicks","Duck","Turkey","Pig","Cow","Cat","Mule","Dog","Turtle"};
 			String[] sound= {"chick","quack","gobble","oink, oink","moo, moo","meow, meow","Heehaw","bow wow","nerp, nerp"};
@@ -1083,6 +1090,47 @@ public class Utility {
 	        }
 			
 		}
+		
+		public static void primenumberarray() {
+
+			int range=100;
+			int a=0,b=0;
+			int[][] arr=new int[10][100];
+			for(int i=2;i<1000;i++)
+			{
+				int flag=0;
+				for(int j=2;j<=i/2;j++)
+				{
+					if(i%j==0)
+					{
+						flag=1;
+						break;
+					}
+				}
+				if(flag==0)
+				{
+					
+					if(i<range)
+					{
+						arr[a][b]=i;
+						System.out.print(arr[a][b]+" ");
+						b=b+1;
+					}
+					
+		
+				}
+				if(i==range) {
+					range=range+100;
+					a++;
+					b=0;
+					System.out.println();
+				}
+			}
+			
+		}
+			
+			
+		
 		
 }		
 

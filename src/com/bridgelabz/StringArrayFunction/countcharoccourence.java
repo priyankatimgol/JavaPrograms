@@ -3,7 +3,7 @@ package com.bridgelabz.StringArrayFunction;
 public class countcharoccourence {
 
 	public static void main(String[] args) {
-		char[] string= {'p','r','y','p'};
+		String[] string= {"to","be","or","not","to","be"};
 		int length=string.length;
 		int j;
 		int count=1;
